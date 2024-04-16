@@ -1,0 +1,19 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  Exclude:
+    - "bin/**"
+    - "db/schema.rb"
+    - "db/migrate/**"
+    - "vendor/**/*"
+    - "node_modules/**/*"
+    - "config/environments/**/*"
+
+Style/Documentation:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
