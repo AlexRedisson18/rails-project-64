@@ -8,6 +8,7 @@ AllCops:
     - "vendor/**/*"
     - "node_modules/**/*"
     - "config/environments/**/*"
+    - "config/initializers/**/*"
 
 Style/Documentation:
   Enabled: false
