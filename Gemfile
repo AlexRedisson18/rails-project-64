@@ -19,6 +19,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'devise'
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'simple_form'
 gem 'slim_lint'
 gem 'slim-rails'
 

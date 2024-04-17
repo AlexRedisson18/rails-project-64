@@ -5,7 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: user1@mail.ru
+  title: post_title_1
+  body: <%= Faker::Lorem.paragraph_by_chars(number: 210) %>
+  category: one
+  creator: one
 
 two:
-  email: user2@mail.ru
+  title: post_title_2
+  body: <%= Faker::Lorem.paragraph_by_chars(number: 210) %>
+  category: two
+  creator: two
