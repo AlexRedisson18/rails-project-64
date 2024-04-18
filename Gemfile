@@ -16,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
+gem 'ancestry'
 gem 'devise'
 gem 'sentry-rails'
 gem 'sentry-ruby'

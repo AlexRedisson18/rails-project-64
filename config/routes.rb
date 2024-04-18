@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   root 'posts#index'
-  resources :posts, only: %i[index new create show]
+  resources :posts, only: %i[index new create show] do
+    resources :comments, only: %i[create]
+  end
 end

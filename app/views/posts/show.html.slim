@@ -22,3 +22,9 @@ ol.breadcrumb
           = 0
         = link_to '#', data: { turbo_method: :post }, class: 'link-dark'
           i.bi.bi-hand-thumbs-up
+#comment-section.lead.mt-3
+  span Commentaries
+  - if user_signed_in?
+    = render 'comments/form', parent: nil
+  - if @post_comments
+    = render 'comments/index', post_comments: @post_comments
