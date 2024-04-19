@@ -4,9 +4,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
-    default_categories = %w[Музыка Фильмы Программирование Игры Искусство]
-    default_categories.each { |category| Category.find_or_create_by(name: category) }
-
     @posts = Post.order(created_at: :desc)
   end
 
