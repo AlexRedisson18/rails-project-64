@@ -29,3 +29,7 @@
 
 en:
   hello: "Hello world"
+  posts:
+    index:
+      collective_blog: Collective blog
+      likes: 'Likes'

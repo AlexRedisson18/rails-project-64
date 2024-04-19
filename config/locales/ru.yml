@@ -1,0 +1,18 @@
+ru:
+  navbar:
+    sign_in: Войти
+    sign_up: Зарегистрироваться
+    sign_out: Выйти
+    create_new_post: Новый пост
+  posts:
+    index:
+      collective_blog: Коллективный блог
+      likes: 'Понравилось'
+    show:
+      all_posts: Все посты
+      comments: Комментарии
+  comments:
+    form:
+      leave_a_comment: Оставить комментарий
+    index:
+      reply: Ответить

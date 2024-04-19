@@ -1,6 +1,6 @@
 ol.breadcrumb
   li.breadcrumb-item
-    = link_to 'All posts', posts_path
+    = link_to t('posts.show.all_posts'), posts_path
   li.breadcrumb-item.active
     = @post.category.name
 .row.justify-content-center.mt-4
@@ -19,11 +19,20 @@ ol.breadcrumb
 
       #likes-section
         span.me-2
-          = 0
-        = link_to '#', data: { turbo_method: :post }, class: 'link-dark'
+          = @post_likes_count
+
+        - if current_user && @current_user_post_like
+          = link_to post_like_path(@post, @current_user_post_like), data: { turbo_method: :delete }, class: 'link-dark'
+            i.bi.bi-hand-thumbs-up-fill
+        - elsif current_user
+          = link_to post_likes_path(@post), data: { turbo_method: :post }, class: 'link-dark'
+            i.bi.bi-hand-thumbs-up
+        - else
           i.bi.bi-hand-thumbs-up
+
 #comment-section.lead.mt-3
-  span Commentaries
+  span
+    =t('posts.show.comments')
   - if user_signed_in?
     = render 'comments/form', parent: nil
   - if @post_comments

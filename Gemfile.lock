@@ -119,6 +119,8 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
+    i18n-debug (1.2.0)
+      i18n (< 2)
     io-console (0.7.2)
     irb (1.12.0)
       rdoc
@@ -211,6 +213,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.9)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.1.3.2)
       actionpack (= 7.1.3.2)
       activesupport (= 7.1.3.2)
@@ -332,12 +337,14 @@ DEPENDENCIES
   debug
   devise
   faker
+  i18n-debug
   jbuilder
   jsbundling-rails
   minitest-power_assert
   pg
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
+  rails-i18n
   redis (>= 4.0.1)
   rubocop (~> 1.21)
   selenium-webdriver

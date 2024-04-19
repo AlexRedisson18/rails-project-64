@@ -8,7 +8,7 @@
           = truncate(post.body, length: 330)
         .text-righ.small.text-muted.mt-auto
           span.me-2
-            = 0
+            = "#{t('posts.index.likes')}: #{post.likes.count}"
           span.me-2
             = time_ago_in_words(post.created_at)
           span

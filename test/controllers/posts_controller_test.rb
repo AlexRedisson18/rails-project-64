@@ -30,16 +30,15 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should create post' do
     post posts_url, params: @params
 
-    post = Post.find_by(@params[:post])
-    assert { post }
+    assert_instance_of(Post, Post.find_by(@params[:post]))
+
     assert_redirected_to post_url(Post.last)
   end
 
   test 'shoult DONT create post' do
     post posts_url, params: { post: {} }
 
-    post = Post.find_by(@params[:post])
-    refute { post }
+    refute_instance_of(Post, Post.find_by(@params[:post]))
   end
 
   test 'should show post' do

@@ -18,6 +18,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'ancestry'
 gem 'devise'
+gem 'rails-i18n'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
@@ -30,6 +31,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'i18n-debug'
   gem 'rubocop', '~> 1.21'
   gem 'web-console'
 end

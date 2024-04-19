@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
+    default_categories = %w[Музыка Фильмы Программирование Игры Искусство]
+    default_categories.each { |category| Category.find_or_create_by(name: category) }
+
     @posts = Post.order(created_at: :desc)
   end
 
@@ -11,6 +14,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @new_post_comment = @post.comments.new
     @post_comments = @post.comments.arrange
+    @post_likes_count = @post.likes.count
+    @current_user_post_like = @post.likes.find_by(user_id: current_user.id) if current_user
   end
 
   def new
@@ -22,7 +27,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = 'New post was successfully created'
-      redirect_to post_path(@post), notice: 'New post was successfully created'
+      redirect_to @post, notice: 'New post was successfully created'
     else
       render :new, status: :unprocessable_entity
     end

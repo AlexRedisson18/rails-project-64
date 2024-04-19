@@ -15,15 +15,13 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   test 'should create comment' do
     post post_comments_url @post, params: @comment_params
 
-    comment = PostComment.find_by(@comment_params[:post_comment])
-    assert { comment }
+    assert_instance_of(PostComment, PostComment.find_by(@comment_params[:post_comment]))
     assert_redirected_to post_url(@post)
   end
 
   test 'should DONT create comment' do
     post post_comments_url @post, params: { post_comment: {} }
 
-    comment = PostComment.find_by(@comment_params[:post_comment])
-    refute { comment }
+    refute_instance_of(PostComment, PostComment.find_by(@comment_params[:post_comment]))
   end
 end
