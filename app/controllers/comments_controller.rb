@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     @post_comment = PostComment.new(comment_params.merge(user_id: current_user.id, post_id: params[:post_id]))
 
     if @post_comment.save
-      flash[:notice] = 'New comment was successfully created'
+      flash[:notice] = t('comments.flash.notice')
     else
-      flash[:alert] = 'Cant be created'
+      flash[:alert] = t('comments.flash.alert')
     end
 
     redirect_to @post

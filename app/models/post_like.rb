@@ -4,5 +4,5 @@ class PostLike < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
-  validates_uniqueness_of :user_id, scope: :post_id
+  validates :user_id, uniqueness: { scope: :post_id }
 end

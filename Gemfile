@@ -19,6 +19,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'ancestry'
 gem 'devise'
 gem 'rails-i18n'
+gem 'rubocop-rails', require: false
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'

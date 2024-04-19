@@ -11,8 +11,14 @@ ru:
     show:
       all_posts: Все посты
       comments: Комментарии
+    flash:
+      notice: Пост опубликован
+      alert: Не удалось создать пост. Проверьте введенные данные
   comments:
     form:
       leave_a_comment: Оставить комментарий
     index:
       reply: Ответить
+    flash:
+      notice: Комментарий опубликован
+      alert: Тело комментария не может быть пустым

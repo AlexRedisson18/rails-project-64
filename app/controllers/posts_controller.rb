@@ -23,9 +23,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      flash[:notice] = 'New post was successfully created'
-      redirect_to @post, notice: 'New post was successfully created'
+      flash[:notice] = t('posts.flash.notice')
+      redirect_to @post
     else
+      flash[:alert] = t('posts.flash.alert')
       render :new, status: :unprocessable_entity
     end
   end
