@@ -38,7 +38,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'shoult DONT create post' do
     post posts_url, params: { post: {} }
 
-    refute_instance_of(Post, Post.find_by(@params[:post]))
+    assert_not_instance_of(Post, Post.find_by(@params[:post]))
   end
 
   test 'should show post' do

@@ -22,6 +22,6 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   test 'should DONT create comment' do
     post post_comments_url @post, params: { post_comment: {} }
 
-    refute_instance_of(PostComment, PostComment.find_by(@comment_params[:post_comment]))
+    assert_not_instance_of(PostComment, PostComment.find_by(@comment_params[:post_comment]))
   end
 end
