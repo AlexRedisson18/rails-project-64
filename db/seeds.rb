@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-require 'faker'
+%w[users categories posts post_comments post_likes].each do |model|
+  seed_file = Rails.root.join('db', 'seeds', "#{model}.rb").to_s
 
-default_categories = %w[Music Movies Programming Games Art]
-default_categories.each { |category| Category.find_or_create_by(name: category) }
+  Rails.logger.debug { "seeding - #{model} seed file" }
+
+  load seed_file
+end
