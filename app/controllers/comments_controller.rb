@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @post_comment = PostComment.new(comment_params.merge(user_id: current_user.id, post_id: params[:post_id]))
+    @post_comment = @post.comments.build(comment_params)
+    @post_comment.user = current_user
 
     if @post_comment.save
       flash[:notice] = t('comments.flash.notice')
