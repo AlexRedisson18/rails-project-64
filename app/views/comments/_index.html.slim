@@ -5,7 +5,7 @@
       span.me-2
         = comment.user.email
       span.fs-6.text-muted
-        = l(comment.created_at, format: :short)
+        = time_ago_in_words(comment.created_at)
 
     .card-body.border-0
       p.card-text
